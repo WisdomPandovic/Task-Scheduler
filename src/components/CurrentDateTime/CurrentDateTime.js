@@ -132,6 +132,14 @@ const CurrentDateTime = () => {
         }
     ];
 
+    const tileClassName = ({ date }) => {
+        const taskDateStrings = tasks.map(task => new Date(task.date).toDateString());
+        if (taskDateStrings.includes(date.toDateString())) {
+            return 'react-calendar__tile--hasTask';
+        }
+        return null;
+    };
+
     return (
         <div className="current-date-time-container text-white d-flex flex-column p-0" style={{ backgroundColor: '#303941', minHeight: '100vh' }}>
             {/* <ToastContainer/> */}
@@ -206,7 +214,7 @@ const CurrentDateTime = () => {
                         </Form.Group>
                         <Form.Group controlId="formDate" className="mt-3">
                             <Form.Label>Date</Form.Label>
-                            <Calendar value={date} onChange={setDate} />
+                            <Calendar value={date} onChange={setDate} tileClassName={tileClassName}/>
                         </Form.Group>
                         <Form.Group controlId="formTime" className="mt-3">
                             <Form.Label>Time</Form.Label>

@@ -22,3 +22,8 @@ body{
   border-color: #000 !important;
   color: #FD7F67 !important;
 }
+
+.react-calendar__tile--hasTask {
+  background-color: red !important;
+  color: white !important;
+}
