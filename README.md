@@ -33,7 +33,7 @@ To run the Task Scheduler App locally, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone <https://github.com/WisdomPandovic/Task-Scheduler>
+   git clone <https://github.com/WisdomPandovic/Task-Scheduler.git>
    cd task-scheduler
    ```
 
