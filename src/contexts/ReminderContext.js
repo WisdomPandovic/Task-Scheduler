@@ -33,11 +33,11 @@ export const ReminderProvider = ({ children }) => {
         setTasks(storedTasks);
 
         // Check for tasks due for execution every second
-        const interval = setInterval(() => {
-            checkScheduledTasks(storedTasks);
-        }, 1000);
+        // const interval = setInterval(() => {
+        //     checkScheduledTasks(storedTasks);
+        // }, 1000);
 
-        return () => clearInterval(interval);
+        // return () => clearInterval(interval);
     }, []);
 
     const handleShow = () => setShowModal(true);
@@ -73,8 +73,8 @@ export const ReminderProvider = ({ children }) => {
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
         setTasks(updatedTasks);
 
-        console.log('Saved task:', task);
-        console.log('All tasks:', updatedTasks);
+        // console.log('Saved task:', task);
+        // console.log('All tasks:', updatedTasks);
 
         handleClose();
     };
@@ -88,22 +88,22 @@ export const ReminderProvider = ({ children }) => {
         handleShow();
     };
 
-    const checkScheduledTasks = (tasks) => {
-        const currentTime = new Date().getTime();
+    // const checkScheduledTasks = (tasks) => {
+    //     const currentTime = new Date().getTime();
 
-        tasks.forEach(task => {
-            const taskTime = new Date(task.date).getTime();
-            const timeDiff = taskTime - currentTime;
+    //     tasks.forEach(task => {
+    //         const taskTime = new Date(task.date).getTime();
+    //         const timeDiff = taskTime - currentTime;
 
-            console.log(`Task: ${task.note}, Time Diff: ${timeDiff}`);
+    //         console.log(`Task: ${task.note}, Time Diff: ${timeDiff}`);
 
-            if (timeDiff > 0 && timeDiff <= 10000) {
-                const reminderTime = new Date(taskTime - 10000);
-                console.log(`Reminder triggered for: ${task.note} at ${formatTime(reminderTime)}`);
-                toast.info(`Reminder: ${task.note} is due at ${formatTime(reminderTime)}!`);
-            }
-        });
-    };
+    //         if (timeDiff > 0 && timeDiff <= 10000) {
+    //             const reminderTime = new Date(taskTime - 10000);
+    //             console.log(`Reminder triggered for: ${task.note} at ${formatTime(reminderTime)}`);
+    //             toast.info(`Reminder: ${task.note} is due at ${formatTime(reminderTime)}!`);
+    //         }
+    //     });
+    // };
 
     const formatTime = (time) => {
         return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });

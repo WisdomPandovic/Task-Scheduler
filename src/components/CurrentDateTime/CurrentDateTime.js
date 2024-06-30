@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { FaEdit, FaPlus } from 'react-icons/fa';
+import { FaEdit, FaPlus, FaTrash } from 'react-icons/fa';
 import { Modal, Button, Form } from 'react-bootstrap';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -59,8 +59,8 @@ const CurrentDateTime = () => {
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
         setTasks(updatedTasks);
 
-        console.log('Saved task:', task);
-        console.log('All tasks:', updatedTasks);
+        // console.log('Saved task:', task);
+        // console.log('All tasks:', updatedTasks);
 
         handleClose();
     };
@@ -72,6 +72,13 @@ const CurrentDateTime = () => {
         setTime(new Date(task.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
         setEditIndex(index);
         handleShow();
+    };
+
+    const handleDelete = (index) => {
+        const updatedTasks = tasks.filter((_, i) => i !== index);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+        setTasks(updatedTasks);
+        toast.error('Reminder deleted successfully!');
     };
 
     // const checkScheduledTasks = (tasks) => {
@@ -109,11 +116,18 @@ const CurrentDateTime = () => {
         {
             name: 'Actions',
             cell: (row, index) => (
-                <FaEdit
-                    className="edit-icon"
-                    style={{ color: '#FD7F67', cursor: 'pointer' }}
-                    onClick={() => handleEdit(index)}
-                />
+                <>
+                    <FaEdit
+                        className="edit-icon"
+                        style={{ color: '#FD7F67', cursor: 'pointer', marginRight: '10px' }}
+                        onClick={() => handleEdit(index)}
+                    />
+                    <FaTrash
+                        className="delete-icon"
+                        style={{ color: '#FD7F67', cursor: 'pointer' }}
+                        onClick={() => handleDelete(index)}
+                    />
+                </>
             ),
         }
     ];
