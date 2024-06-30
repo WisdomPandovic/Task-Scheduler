@@ -37,7 +37,7 @@ const CalendarAndButtons = () => {
     ];
 
     return (
-        <div className="calendar-and-buttons-container" style={{ backgroundColor: '', minHeight: '100vh' }}>
+        <div className="calendar-and-buttons-container p-3" style={{ backgroundColor: '#F4F4F4', minHeight: '100vh' }}>
             <div className='d-flex justify-content-between p-3'>
                 <h3>Task Scheduler</h3>
                 <FaCog className="me-1" style={{ color: '#FD7F67' }} />
