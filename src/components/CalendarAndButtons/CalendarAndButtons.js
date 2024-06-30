@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -46,7 +45,7 @@ const CalendarAndButtons = () => {
             <div className="calendar-container">
                 <Calendar />
             </div>
-            <div className="buttons-container d-flex mt-3 p-5">
+            <div className="buttons-container d-flex flex-wrap mt-3 p-3">
                 <Button
                     variant="dark"
                     style={{
@@ -55,6 +54,7 @@ const CalendarAndButtons = () => {
                         color: '#FD7F67',
                         minWidth: '200px',
                         padding: '10px 20px',
+                        margin:'10px',
                         display: 'flex',
                         alignItems: 'center',
                     }}
@@ -70,13 +70,14 @@ const CalendarAndButtons = () => {
                         color: '#FD7F67',
                         minWidth: '200px',
                         padding: '10px 20px',
+                        margin:'10px',
                         display: 'flex',
                         alignItems: 'center',
                     }}
                     className="ms-2"
                     onClick={handleSeePlannedEvents}
                 >
-                    See Planned Events <FaSearch className="me-2" style={{ marginLeft: '5px', color: '#FD7F67' }} /> 
+                    See Planned Events <FaSearch className="me-2" style={{ marginLeft: '5px', color: '#FD7F67' }} />
                 </Button>
             </div>
 

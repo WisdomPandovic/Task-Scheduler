@@ -7,11 +7,11 @@ export default function Home() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-lg-3">
-          <CurrentDateTime/> 
+        <div className="col-md-3">
+          <CurrentDateTime />
         </div>
-        <div className="col-lg-7">
-          <CalendarAndButtons/>
+        <div className="col-md-7">
+          <CalendarAndButtons />
         </div>
       </div>
     </div>

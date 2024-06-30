@@ -110,7 +110,7 @@ export const ReminderProvider = ({ children }) => {
     };
 
     return (
-        <ReminderContext.Provider value={{ tasks, handleShow, handleClose, handleSave, showModal, note, setNote, date, setDate, time, setTime, editIndex, handleEdit, handleShowEvents, handleCloseEvents, showEventsModal }}>
+        <ReminderContext.Provider value={{ tasks, handleShow, handleClose, handleSave, showModal, note, setNote, date, setDate, time, setTime, editIndex, handleEdit, handleShowEvents, handleCloseEvents, showEventsModal, getCurrentDate, dayOfMonth, dayOfWeek }}>
             {children}
         </ReminderContext.Provider>
     );
