@@ -1,4 +1,4 @@
-*{
+body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,20 +17,16 @@
   line-height: 2.125em !important;
 }
 
-/* .col-md-7 {
-  flex: 0 0 auto;
-  width: 75% !important; 
-} */
-
 .custom-save-button {
   background-color: #000 !important;
   border-color: #000 !important;
   color: #FD7F67 !important;
 }
 
-/* @media (max-width: 758px) {
-  .col-md-7 {
-    flex: 0 0 auto;
-    width: 75% !important; 
-  }
+/* html, body, #__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 } */
+

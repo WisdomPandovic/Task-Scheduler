@@ -5,12 +5,12 @@ import '../utils/scheduler';
 
 export default function Home() {
   return (
-    <div className="container-fluid">
-      <div className="row">
+    <div className="container-fluid p-0">
+      <div className="row g-0">
         <div className="col-md-3">
           <CurrentDateTime />
         </div>
-        <div className="col-md-7">
+        <div className="col-md-9">
           <CalendarAndButtons />
         </div>
       </div>

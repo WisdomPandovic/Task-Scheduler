@@ -119,7 +119,7 @@ const CurrentDateTime = () => {
     ];
 
     return (
-        <div className="current-date-time-container text-white d-flex flex-column" style={{ backgroundColor: '#303941', minHeight: '100vh' }}>
+        <div className="current-date-time-container text-white d-flex flex-column p-0" style={{ backgroundColor: '#303941', minHeight: '100vh' }}>
             <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
             <div className="d-flex justify-content-between p-3">
                 <div>
@@ -137,7 +137,7 @@ const CurrentDateTime = () => {
                 <p className="display-6 text-uppercase">{dayOfWeek}</p>
             </div>
             <div className="flex-grow-1">
-                <p className='text-uppercase mb-1 pl-3 mb-0' style={{ color: '#424E59' }}>Current Event</p>
+                <p className='text-uppercase p-3 mb-0' style={{ color: '#424E59' }}>Current Event</p>
                 <hr className="my-1" />
                 <div className="container-fluid h-100">
                     <div className="row h-100">
