@@ -36,6 +36,14 @@ const CalendarAndButtons = () => {
         },
     ];
 
+    const tileClassName = ({ date }) => {
+        const taskDateStrings = tasks.map(task => new Date(task.date).toDateString());
+        if (taskDateStrings.includes(date.toDateString())) {
+            return 'react-calendar__tile--hasTask';
+        }
+        return null;
+    };
+
     return (
         <div className="calendar-and-buttons-container p-3" style={{ backgroundColor: '#F4F4F4', minHeight: '100vh' }}>
             <div className='d-flex justify-content-between p-3'>
@@ -43,7 +51,7 @@ const CalendarAndButtons = () => {
                 <FaCog className="me-1" style={{ color: '#FD7F67' }} />
             </div>
             <div className="calendar-container">
-                <Calendar />
+                <Calendar tileClassName={tileClassName}/>
             </div>
             <div className="buttons-container d-flex flex-wrap mt-3 p-3">
                 <Button
