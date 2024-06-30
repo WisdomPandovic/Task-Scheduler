@@ -130,7 +130,7 @@ const CalendarAndButtons = () => {
                     />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseEvents}>Close</Button>
+                    <Button variant="secondary" className="custom-save-button" onClick={handleCloseEvents}>Close</Button>
                 </Modal.Footer>
             </Modal>
         </div>

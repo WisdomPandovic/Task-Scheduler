@@ -22,11 +22,11 @@ const CurrentDateTime = () => {
         setTasks(storedTasks);
 
         // Check for tasks due for execution every second
-        const interval = setInterval(() => {
-            checkScheduledTasks(storedTasks);
-        }, 1000);
+        // const interval = setInterval(() => {
+        //     checkScheduledTasks(storedTasks);
+        // }, 1000);
 
-        return () => clearInterval(interval);
+        // return () => clearInterval(interval);
     }, []);
 
     const handleShow = () => setShowModal(true);
@@ -74,22 +74,22 @@ const CurrentDateTime = () => {
         handleShow();
     };
 
-    const checkScheduledTasks = (tasks) => {
-        const currentTime = new Date().getTime();
+    // const checkScheduledTasks = (tasks) => {
+    //     const currentTime = new Date().getTime();
 
-        tasks.forEach(task => {
-            const taskTime = new Date(task.date).getTime();
-            const timeDiff = taskTime - currentTime;
+    //     tasks.forEach(task => {
+    //         const taskTime = new Date(task.date).getTime();
+    //         const timeDiff = taskTime - currentTime;
 
-            console.log(`Task: ${task.note}, Time Diff: ${timeDiff}`);
+    //         console.log(`Task: ${task.note}, Time Diff: ${timeDiff}`);
 
-            if (timeDiff > 0 && timeDiff <= 10000) {
-                const reminderTime = new Date(taskTime - 10000);
-                console.log(`Reminder triggered for: ${task.note} at ${formatTime(reminderTime)}`);
-                toast.info(`Reminder: ${task.note} is due at ${formatTime(reminderTime)}!`);
-            }
-        });
-    };
+    //         if (timeDiff > 0 && timeDiff <= 10000) {
+    //             const reminderTime = new Date(taskTime - 10000);
+    //             console.log(`Reminder triggered for: ${task.note} at ${formatTime(reminderTime)}`);
+    //             toast.info(`Reminder: ${task.note} is due at ${formatTime(reminderTime)}!`);
+    //         }
+    //     });
+    // };
 
     const formatTime = (time) => {
         return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -120,7 +120,7 @@ const CurrentDateTime = () => {
 
     return (
         <div className="current-date-time-container text-white d-flex flex-column p-0" style={{ backgroundColor: '#303941', minHeight: '100vh' }}>
-            <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+            {/* <ToastContainer/> */}
             <div className="d-flex justify-content-between p-3">
                 <div>
                     <span style={{ color: '#FD7F67' }}>●</span>
